@@ -5,12 +5,14 @@ body {background-color: #829E84;}
 
 body a {color: #632647;}
 body a:visited {color: #632647;}
-form.search {border-color: #632647; background-color: #F1F2D3;}
+form.search {}
 
 form.search input[type=submit] {background-color: #C56323; color: #5C3317; border-color: #632647;}
 
 #header p {text-align: center; margin-bottom: 2em;}
 #header a, #header a:visited {color: #5C3317; text-decoration: none; }
+
+#body {border-color: #632647; background-color: #F1F2D3;}
 
 p.successful {color: green;}
 
@@ -20,7 +22,7 @@ p.none {color: red;}
 
 /* Border Style */
 
-form.search {border-style: solid;}
+#body {border-style: solid;}
 
 
 
@@ -49,11 +51,13 @@ body, * {font-family: 'Georgia', serif;}
 
 /* Padding, margin, border size */
 
-body #page {padding: 2em;}
+body {padding: 1em;}
 
-form.search {padding: .5em; border-width: 10px; margin-bottom: 1em;}
+#body {padding: 1.5em; border-width: 10px; min-width: 200px;}
 
-form.search input#topic_name {height: 1.2em; padding: .1em; width: 10em; margin-left: 1em; border: 1px solid;}
+form.search {padding: .5em;}
+
+form.search input#topic_name {height: 1.2em; padding: .1em; width: 30%; max-width: 10em; margin-left: 1em; border: 1px solid;}
 form.search input[type=submit] {height: 1.2em; padding: .1em .3em; margin-left: 1em; cursor: pointer; font-size: .9em; border: 1px solid;}
 
 p.views {margin-top: 5em;}

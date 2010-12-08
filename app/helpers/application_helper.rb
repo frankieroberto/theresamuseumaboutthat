@@ -1,4 +1,3 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
   def search_form(term = '', examples = nil)
@@ -7,7 +6,7 @@ module ApplicationHelper
     	text_field(:topic, :name, :value => term, :autocomplete => :off) +
       submit_tag("Search") +
       examples.to_s  +
-    "</form>"
+    "</form>".html_safe
   end
   
   def examples(topics)
@@ -15,7 +14,7 @@ module ApplicationHelper
     topics.each do |topic|
       examples << link_to(topic.name, topic)
     end
-    content_tag("p", "Examples: " + examples.join(", ") + ".", :class => :examples)
+    content_tag("p", "Examples: ".html_safe + examples.join(", ").html_safe, :class => :examples)
   end
 
   def pluralize_with_a(count, term)
@@ -36,5 +35,6 @@ module ApplicationHelper
     content_tag("div", address.join(tag("br")), :class => "adr")
     
   end
+
 
 end

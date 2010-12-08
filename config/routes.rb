@@ -1,10 +1,7 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :classifications
+Theresamuseumaboutthat::Application.routes.draw do
 
-  map.resources :museums
-
-  map.resources :topics
-
-  map.root :controller => "Homepage", :action => "show"
+  resources :museums
+  resources :topics
+  root :to => 'Homepage#show'
 
 end

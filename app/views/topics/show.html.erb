@@ -1,0 +1,30 @@
+<%= search_form(@topic.name)%>
+
+<% if @topic.museums.size > 0 %>
+	
+	<p class="result successful">There's <%= pluralize_with_a(@topic.museums_count, "museum") %> about that.</p>
+	
+	<% if @topic.museums.size > 1 %>
+		<ul>
+			<% @topic.museums.each do |museum| %>
+				<li><%= link_to museum.name, museum %></li>
+			<% end %>
+		</ul>
+	<% else %>	
+		<% @museum = @topic.museums.first %>
+	
+		<h2><%= link_to @museum.name, @museum %></h2>
+
+		<%= address_format(@museum.building, @museum.street, @museum.town, @museum.post_code) %>
+
+			
+	<% end %>
+
+<% else %>
+
+	<p class="result none">There's not a museum about that. Why not start one?</p>
+
+<% end %>
+
+
+<p class="views"><%= pluralize(@topic.views, "view") %>.</p>

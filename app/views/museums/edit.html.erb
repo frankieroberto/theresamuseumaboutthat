@@ -1,0 +1,59 @@
+<h1>Editing museum</h1>
+
+<% form_for(@museum) do |f| %>
+  <%= f.error_messages %>
+
+	<p>
+		<%= f.label :name %>:
+		<%= f.text_field :name %>
+	</p>
+	
+	<p>
+		<%= f.label :building %>:
+		<%= f.text_field :building %>
+	</p>
+
+	<p>
+		<%= f.label :street %>:
+		<%= f.text_field :street %>
+	</p>
+
+	<p>
+		<%= f.label :town %>:
+		<%= f.text_field :town %>
+	</p>
+
+
+	<p>
+		<%= f.label :post_code %>:
+		<%= f.text_field :post_code %>
+	</p>
+
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+	<h2>Topics:</h2>
+
+	<ul>
+		<% @museum.classifications.each do |classification| %>
+			<li><%= classification.topic.name %> <%= link_to "x", classification_path(classification.id), :method => :delete %></li>
+		<% end %>
+			<li>Add topic: <% form_for(Classification.new) do |f| %>
+					<%= f.hidden_field :museum_id, :value => @museum.id %>
+					<%= f.collection_select :topic_id, @topics, :id, :name %>
+					<%= f.submit "Add" %>
+				<% end %>
+			</li>
+			<li>Add topic: <% form_for(Classification.new) do |f| %>
+					<%= f.hidden_field :museum_id, :value => @museum.id %>
+					<%= text_field :topic, :name %>
+					<%= f.submit "Add" %>
+				<% end %>
+			</li>
+	</ul>
+
+<%= link_to 'Show', @museum %> |
+<%= link_to 'Back', museums_path %>

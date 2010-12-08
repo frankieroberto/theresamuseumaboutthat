@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>There's a Museum About That <%= " - " + @page_title if @page_title %></title>
+  <%= stylesheet_link_tag "application" %>
+</head>
+<body id="">
+
+	<div id="page">
+	
+		<div id="header" class="header">
+			<p><%= link_to "There's a Museum About That", root_path %></p>
+    </div> <!-- /navigation -->
+
+		<div id="body">
+			<%= yield  %>
+		</div>
+		
+		<div id="footer">	
+		</div>
+
+	</div>
+
+</body>
+</html>

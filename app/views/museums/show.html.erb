@@ -1,0 +1,7 @@
+<h1><%= @museum.name %></h1>
+
+<%= museum_address_format(@museum) %>
+
+
+<%= link_to 'Edit', edit_museum_path(@museum) %> |
+<%= link_to 'Back', museums_path %>

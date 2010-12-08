@@ -1,0 +1,11 @@
+<h1>Topics</h1>
+
+<table>
+	<tr>
+		<th>Topic</th>
+		<th>Museums</th>
+	</tr>
+	<% @topics.each do |topic| %>
+		<tr><td><%= link_to topic.name, topic %></td><td><%= topic.museums.size %></td></tr>
+	<% end %>
+</table>

@@ -1,0 +1,54 @@
+
+/* Colours */
+
+body {background-color: #DDD;}
+
+body a {color: #22B;}
+body a:visited {color: #226;}
+form.search {border-color: #888;}
+
+#header p {text-align: center; margin-bottom: 2em;}
+#header a, #header a:visited {color: #444; text-decoration: none; }
+
+/* Border Style */
+
+form.search {border-style: solid;}
+
+p.successful {color: green;}
+p.none {color: red;}
+
+p.views {color: #666;}
+
+/* Text size */
+
+body {font-size: 20px;}
+
+p.result {font-size: 1.5em;}
+
+form.search {font-size: 2em;}
+
+form.search input#topic_name,
+form.search input[type=submit] {font-size: 1em;}
+form.search p.examples {font-size: .5em;}
+
+p.views {font-size: .8em;}
+
+/* Text alignment */
+
+p.views {text-align: center;}
+
+/* Font family */
+
+body, * {font-family: 'Georgia', serif;}
+
+
+/* Padding, margin, border size */
+
+body #page {padding: 2em;}
+
+form.search {padding: .5em; border-width: 2px; margin-bottom: 1em;}
+
+form.search input#topic_name {height: 1.2em; padding: .1em; width: 10em; margin-left: 1em;}
+form.search input[type=submit] {height: 1.2em; margin-left: 1em; cursor: pointer;}
+
+p.views {margin-top: 5em;}

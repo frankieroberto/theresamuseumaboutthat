@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  museums_count: 1
+  views: 1
+
+two:
+  name: MyString
+  museums_count: 1
+  views: 1

@@ -32,7 +32,7 @@ module ApplicationHelper
     address << content_tag("span", town, :class => "locality") unless town.blank?    
     address << content_tag("span", post_code, :class => "postal-code") unless post_code.blank?    
     
-    content_tag("div", address.join(tag("br")), :class => "adr")
+    content_tag("div", address.join(tag("br")).html_safe, :class => "adr")
     
   end
 

@@ -1,0 +1,39 @@
+
+<% form_for(@museum) do |f| %>
+
+
+	<p>
+		<%= f.label :name %>:
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :building %>:
+		<%= f.text_field :building %>
+	</p>
+
+	<p>
+		<%= f.label :street %>:
+		<%= f.text_field :street %>
+	</p>
+
+	<p>
+		<%= f.label :town %>:
+		<%= f.text_field :town %>
+	</p>
+
+
+	<p>
+		<%= f.label :post_code %>:
+		<%= f.text_field :post_code %>
+	</p>
+
+	<p>
+		<%= f.label :website %>:
+		<%= f.text_field :website %>
+	</p>
+
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>

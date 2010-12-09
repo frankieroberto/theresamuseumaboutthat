@@ -1,41 +1,4 @@
 class ClassificationsController < ApplicationController
-  # GET /classifications
-  # GET /classifications.xml
-  def index
-    @classifications = Classification.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @classifications }
-    end
-  end
-
-  # GET /classifications/1
-  # GET /classifications/1.xml
-  def show
-    @classification = Classification.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @classification }
-    end
-  end
-
-  # GET /classifications/new
-  # GET /classifications/new.xml
-  def new
-    @classification = Classification.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @classification }
-    end
-  end
-
-  # GET /classifications/1/edit
-  def edit
-    @classification = Classification.find(params[:id])
-  end
 
   # POST /classifications
   # POST /classifications.xml
@@ -54,24 +17,7 @@ class ClassificationsController < ApplicationController
         format.html { redirect_to( edit_museum_path(@classification.museum_id)) }
         format.xml  { render :xml => @classification, :status => :created, :location => @classification }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @classification.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /classifications/1
-  # PUT /classifications/1.xml
-  def update
-    @classification = Classification.find(params[:id])
-
-    respond_to do |format|
-      if @classification.update_attributes(params[:classification])
-        flash[:notice] = 'Classification was successfully updated.'
-        format.html { redirect_to(@classification) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
+        format.html { redirect_to( edit_museum_path(@classification.museum_id)) }
         format.xml  { render :xml => @classification.errors, :status => :unprocessable_entity }
       end
     end

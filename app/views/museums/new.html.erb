@@ -1,26 +1,7 @@
 <h1>New museum</h1>
 
-<% form_for(@museum) do |f| %>
+	<%= render "fields", :locals => {:museum => @museum} %>
 
-	<p>
-		<%= f.label :name %>:
-		<%= f.text_field :name %>
-	</p>
-	
-	<p>
-		<%= f.label :website %>:
-		<%= f.text_field :website %>
-	</p>
 
-	<p>
-		<%= f.label :post_code %>:
-		<%= f.text_field :post_code %>
-	</p>
-	
-	
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
 
 <%= link_to 'Back', museums_path %>

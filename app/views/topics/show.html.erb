@@ -7,16 +7,19 @@
 	<% if @topic.museums.size > 1 %>
 		<ul>
 			<% @topic.museums.each do |museum| %>
-				<li><%= link_to museum.name, museum.website %></li>
+				<li><%= museum.name %></li>
 			<% end %>
 		</ul>
 	<% else %>	
 		<% @museum = @topic.museums.first %>
 	
-		<h2><%= link_to @museum.name, @museum.website %></h2>
+		<h2><%= @museum.name %></h2>
 
 		<%= address_format(@museum.building, @museum.street, @museum.town, @museum.post_code) %>
-
+		
+		<% if @museum.website %>
+			<p><%= link_to "Visit their website", @museum.website, :class => :website %>
+		<% end %>
 			
 	<% end %>
 

@@ -13,6 +13,11 @@ class Topic < ActiveRecord::Base
     self.save!
   end
   
+  def increment_searches_counter!
+    self.searches += 1
+    self.save!
+  end
+  
   private
   
     def set_views_as_zero

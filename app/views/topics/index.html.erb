@@ -4,8 +4,10 @@
 	<tr>
 		<th>Topic</th>
 		<th>Museums</th>
+		<th>Searches</th>
+		<th>Views</th>
 	</tr>
 	<% @topics.each do |topic| %>
-		<tr><td><%= link_to topic.name, topic_path(topic) %></td><td><%= topic.museums.size %></td></tr>
+		<tr><td><%= link_to topic.name, topic_path(topic) %></td><td><%= topic.museums.size %></td><td><%= topic.searches %></td><td><%= topic.views %></td></tr>
 	<% end %>
 </table>

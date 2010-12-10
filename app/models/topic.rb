@@ -6,7 +6,7 @@ class Topic < ActiveRecord::Base
   has_many :classifications
   has_many :museums, :through => :classifications
 
-  before_validation_on_create :set_views_as_zero
+  before_validation_on_create :set_views_as_zero, :set_searches_as_zero
 
   def increment_view_counter!
     self.views += 1
@@ -21,6 +21,10 @@ class Topic < ActiveRecord::Base
   private
   
     def set_views_as_zero
+      self.views = 0
+    end
+
+    def set_searches_as_zero
       self.views = 0
     end
 

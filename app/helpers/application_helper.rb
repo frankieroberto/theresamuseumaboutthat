@@ -4,7 +4,7 @@ module ApplicationHelper
     form_tag(:topics, :method => :get, :class => "search") +
     	label_tag(:topic_name, "I'm interested in...") + 
     	text_field(:topic, :name, :value => term, :autocomplete => :off) +
-      submit_tag("Search") +
+      submit_tag("Find") +
       examples.to_s  +
     "</form>".html_safe
   end
